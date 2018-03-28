@@ -47,13 +47,15 @@ This was relatively straightforward and I essentially replicated the code/formul
 Thereafter, i had to call the Init, UpdateError and TotalError for the steering value.
 After a lot of manual tuning I settled for the following values.
 
-Kp = 0.1
+Kp = 0.15
 Ki = 0.001
-Kd = 2.0
+Kd = 2.5
+
+As comments in the code, I still have other combinations that worked as well.
 
 With the above values for steering PID, the car will not leave the track at all.
 
-After this, i took notice of the fact that there was a comment in the code which said that another PID could be used.
+After this, I took notice of the fact that there was a comment in the code which said that another PID could be used.
 
 I decided to use another PID for the throttle value. I was successful to some extent or so i believe.
 I decided to cap my speed at 45 MPh. 
