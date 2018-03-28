@@ -49,7 +49,7 @@ After a lot of manual tuning I settled for the following values.
 
 Kp = 0.15
 Ki = 0.001
-Kd = 2.5
+Kd = 2.75
 
 As comments in the code, I still have other combinations that worked as well.
 
@@ -69,4 +69,11 @@ Kd = 1.0
 The issue with the throttle PID, is in the first quarter of lap 1,
 the car accelerates to a very high speed of almost 75 Mph.
 Thereafter, the car can go around any number of laps and the speed will be fixed at around 45 Mph.
-This is something i will need to work on and understand.
+
+I tried to fix this by tracking the speed.
+Whenever the speed is more than 46 Mph, I cap the throttle value at 0.1
+However, I got mixed results with this. This is something that I will need to work on later.
+
+For the submission i commented out the above mentioned code snippet to avoid wild oscillations.
+Though the second PID seems to work, i need to perfect it to avoid instability.
+Things were more stable with just one PID for the steering value.

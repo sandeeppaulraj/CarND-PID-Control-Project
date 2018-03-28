@@ -37,7 +37,7 @@ int main()
   // TODO: Initialize the pid variable.
   //pid.Init(0.1, 0.001, 2.0);
   //pid.Init(0.15, 0.0001, 2.0);
-  pid.Init(0.15, 0.001, 2.5);
+  pid.Init(0.15, 0.001, 2.75);
   
   //pid_throttle.Init(0.04, 0.01, 0.05);
   pid_throttle.Init(0.2, 0.01, 1);
@@ -77,8 +77,8 @@ int main()
 		  pid_throttle.UpdateError(speed - 45);
 		  throttle_value = pid_throttle.TotalError();
 		  
-		  //if (throttle_value > 0.9)
-			//  throttle_value = 0.5;
+		  //if (speed > 46.0)
+			//  throttle_value = 0.1;
 		  
           // DEBUG
           std::cout << "CTE: " << cte << " Steering Value: " << steer_value << std::endl;
